@@ -21,9 +21,9 @@ const sess = {
   
   app.use(session(sess));
   
-  const helpers = require('./utils/helpers');
+//   const helpers = require('./utils/helpers');
   
-  const hbs = exphbs.create({ helpers });
+//   const hbs = exphbs.create({ helpers });
   
   app.engine('handlebars', hbs.engine);
   app.set('view engine', 'handlebars');
@@ -32,7 +32,7 @@ const sess = {
   app.use(express.urlencoded({ extended: false }));
   app.use(express.static(path.join(__dirname, 'public')));
   
-  app.use(require('./controllers/'));
+//   app.use(require('./controllers/'));
   
   sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => console.log('Now listening'));
