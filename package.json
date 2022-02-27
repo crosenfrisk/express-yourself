@@ -1,0 +1,39 @@
+{
+  "name": "express-yourself",
+  "version": "1.0.0",
+  "description": "Full Stack Web Application for blog/website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crosenfrisk/express-yourself.git"
+  },
+  "keywords": [
+    "blog",
+    "website",
+    "upvote",
+    "comment",
+    "user",
+    "login",
+    "logout",
+    "dashboard"
+  ],
+  "author": "Claire Rosenfrisk",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/crosenfrisk/express-yourself/issues"
+  },
+  "homepage": "https://github.com/crosenfrisk/express-yourself#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "connect-session-sequelize": "^7.1.2",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "express-handlebars": "^6.0.2",
+    "express-session": "^1.17.2",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.17.0"
+  }
+}
