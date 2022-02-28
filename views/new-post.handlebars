@@ -1,19 +1,4 @@
-{{#if posts.length}}
 <section>
-  <h2>Your Posts</h2>
-  <ol>
-    {{#each posts as |post|}}
-    <li>
-      {{> post-info post}}
-      <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
-    </li>
-    {{/each}}
-  </ol>
-</section>
-{{/if}}
-
-<a href="/views/new-post.handlebars" class="button"> Create a New Post </a>
-{{!-- <section>
   <h2>Create New Blog Post</h2>
   <form class="new-post-form">
     <div>
@@ -26,6 +11,6 @@
     </div>
     <button type="submit" class="btn">Create</button>
   </form>
-</section> --}}
+</section>
 
-{{!-- <script src="/javascript/add-post.js"></script> --}}
+<script src="/javascript/add-post.js"></script>

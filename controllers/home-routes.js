@@ -76,7 +76,7 @@ router.get('/post/:id', (req, res) => {
 
       const post = dbPostData.get({ plain: true });
 
-      res.render('single-post', {
+      res.render('add-comment', {
         post,
         loggedIn: req.session.loggedIn
       });
@@ -94,6 +94,14 @@ router.get('/login', (req, res) => {
   }
 
   res.render('login');
+});
+
+router.get('/sign-up', (req, res) => {
+  if (req.session.loggedIn){
+    res.redirect('/');
+    return;
+  }
+  res.render('sign-up');
 });
 
 module.exports = router;
