@@ -104,4 +104,12 @@ router.get('/sign-up', (req, res) => {
   res.render('sign-up');
 });
 
+// router.get('/new-post', (req, res) => {
+//   if (req.session.loggedIn){
+//     res.redirect('/');
+//     return;
+//   }
+//   res.render('new-post');
+// });
+
 module.exports = router;
