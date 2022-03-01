@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
   Post.findAll({
     attributes: [
       'id',
-      'post_url',
+      'post_content',
       'title',
       'created_at'
     ],
@@ -49,7 +49,7 @@ router.get('/post/:id', (req, res) => {
     },
     attributes: [
       'id',
-      'post_url',
+      'post_content',
       'title',
       'created_at'
     ],
@@ -76,7 +76,7 @@ router.get('/post/:id', (req, res) => {
 
       const post = dbPostData.get({ plain: true });
 
-      res.render('single-post', {
+      res.render('add-comment', {
         post,
         loggedIn: req.session.loggedIn
       });
@@ -95,5 +95,21 @@ router.get('/login', (req, res) => {
 
   res.render('login');
 });
+
+router.get('/sign-up', (req, res) => {
+  if (req.session.loggedIn){
+    res.redirect('/');
+    return;
+  }
+  res.render('sign-up');
+});
+
+// router.get('/new-post', (req, res) => {
+//   if (req.session.loggedIn){
+//     res.redirect('/');
+//     return;
+//   }
+//   res.render('new-post');
+// });
 
 module.exports = router;

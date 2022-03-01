@@ -24,3 +24,14 @@ You are required to submit BOTH of the following for review:
 * The URL of the functional, deployed application.
 
 * The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
+
+## Credit
+
+* [Handlebars](https://www.npmjs.com/package/express-handlebars)
+* [MySQL](https://www.npmjs.com/package/mysql2)
+* [Sequelize](https://www.npmjs.com/package/sequelize)
+* [dotenv](https://www.npmjs.com/package/dotenv)
+* [bcrypt](https://www.npmjs.com/package/bcrypt)
+* [Express-session](https://www.npmjs.com/package/express-session)
+* [Express-session-sequelize](https://www.npmjs.com/package/connect-session-sequelize)
+* [Heroku](https://devcenter.heroku.com/)
