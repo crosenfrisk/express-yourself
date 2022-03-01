@@ -1,7 +1,14 @@
 <article class="post">
   <div class="title">
-    <h3>{{title}}</h3>
+
+    <h3>
+      <a href="/post/{{id}}"{{title}}>{{title}}</a>
+    </h3>
+    
+    {{#unless homepage}}
     <p class="post_content">{{post_content}}</p>
+    {{/unless}}
+
   </div>
   <div class="meta">
     Created by {{user.username}} on {{format_date created_at}}

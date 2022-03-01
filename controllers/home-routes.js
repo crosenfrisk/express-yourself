@@ -4,7 +4,6 @@ const { Post, User, Comment } = require('../models');
 
 // Get all posts for homepage
 router.get('/', (req, res) => {
-  console.log('======================');
   Post.findAll({
     attributes: [
       'id',
@@ -27,8 +26,12 @@ router.get('/', (req, res) => {
       }
     ]
   })
+  // Get all the data from posts
     .then(dbPostData => {
       const posts = dbPostData.map(post => post.get({ plain: true }));
+
+      // Create condition: if on main page and post title is not clicked, do not show post content on home page.
+      posts.map(post => post.main = true);
 
       res.render('homepage', {
         posts,

@@ -20,6 +20,10 @@
   a:hover {
     color: #3486eb;
   }
+
+  article .post {
+    border: #225ca3;
+  }
   
   button {
     background-color: #225ca3;
@@ -129,13 +133,18 @@
   .delete-post-btn:hover {
     background-color: #ff643d;
   }
+
+  .pub-details {
+    color: #333;
+    font-style: italic;
+  }
   
   .post {
     margin-bottom: 2%;
     line-height: 150%;
   }
   
-  .post .title h3 {
+  .post .title span {
     font-style: italic;
     font-size: 100%;
     color: #225ca3;
@@ -149,6 +158,10 @@
   .comment-form {
     margin-bottom: 5%;
   }
+
+  .comment-form button {
+    background-color: green;
+  }
   
   .comment {
     padding: 1%;
@@ -156,13 +169,15 @@
   }
   
   .comment:nth-child(odd) {
-    background-color: #fff5eb;
+    background-color: palegoldenrod;
   }
   
-  .comment .meta {
+  div .meta {
     font-size: 90%;
     margin-bottom: .5%;
     opacity: .6;
+    color: grey;
+    font-style: oblique;
   }
   
   .new-post-form input {
