@@ -22,4 +22,4 @@ async function createNewPost(event) {
   }
 }
 
-document.querySelector('.new-post-form').addEventListener('click', createNewPost);
+document.querySelector('.new-post-form').addEventListener('submit', createNewPost);
