@@ -10,10 +10,17 @@
     {{/each}}
   </ol>
 </section>
+{{else}}
+<section>
+  <h2><em>You Don't Have Any Posts Yet!</em></h2>
+</section>
 {{/if}}
 
+<a href="/new-post" class="create-post-btn" style="text-align:center;display:block;"> Create A New Post</a>
 
-<section>
+{{!-- <input type="button" value="Create New Post" onClick="'/views/new-post"> --}}
+
+{{!-- <section>
   <h2>Create New Blog Post</h2>
   <form class="new-post-form">
     <div>
@@ -26,6 +33,6 @@
     </div>
     <button type="submit" class="btn">Create</button>
   </form>
-</section>
+</section> --}}
 
 <script src="/javascript/add-post.js"></script>

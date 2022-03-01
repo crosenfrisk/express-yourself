@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Express Yourself</title>
+  <script src="https://kit.fontawesome.com/240270ce6a.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 
@@ -16,7 +17,8 @@
       </h1>
       <nav>
         {{#if loggedIn}}
-        <a href="/dashboard">Dashboard</a>
+        <a href="/"> <i class="fas fa-home" style="display:inline; align:center;"> </i></a> |
+        <a href="/dashboard">Dashboard</a> |
         <button id="logout" class="btn-no-style">Logout</button>
         {{else}}
         <a href="/login">Login / </a>
