@@ -35,3 +35,4 @@ You are required to submit BOTH of the following for review:
 * [Express-session](https://www.npmjs.com/package/express-session)
 * [Express-session-sequelize](https://www.npmjs.com/package/connect-session-sequelize)
 * [Heroku](https://devcenter.heroku.com/)
+* [W3docs -- "How to Detect Idle Time in JavaScript" ](https://www.w3docs.com/snippets/javascript/how-to-detect-idle-time-in-javascript.html)
