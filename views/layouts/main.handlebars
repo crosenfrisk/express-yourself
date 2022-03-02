@@ -1,71 +1,50 @@
-<!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Express Yourself</title>
-  <script src="https://kit.fontawesome.com/240270ce6a.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="/stylesheets/style.css">
-  {{!-- <link rel="favicon" href="http://www.w3.org/2000/svg"> --}}
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Express Yourself</title>
+    <script
+      src="https://kit.fontawesome.com/240270ce6a.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    {{! <link rel="favicon" href="http://www.w3.org/2000/svg"> }}
+  </head>
 
-<body>
-  <div class="wrapper">
-    <header>
-      <h1>
-        <a href="/">Express Yourself</a>
-      </h1>
-      <nav>
-        {{#if loggedIn}}
-        <a href="/"> <i class="fas fa-home" style="display:inline; align:center;"> </i></a> |
-        <a href="/dashboard">Dashboard</a> |
-        <button id="logout" class="btn-no-style">Logout</button>
-        {{else}}
-        <a href="/login">Login / </a>
-        <a href="/sign-up">Sign Up</a>
-        {{/if}}
-      </nav>
-    </header>
-    <main>
-      {{{ body }}}
-    </main>
-    <footer>
-      Share Something Meaningful &hearts;
-    </footer>
-  </div>
-  
-  {{#if loggedIn}}
-  <script src="/javascript/logout.js">
-    // Time out function for ALL pages; users must be active while logged in to continue to 
-    // make posts, comment, and edit posts/comments, delete posts/comments.
-    let inactivityTime = function() {
-        let time;
-        window.onload = resetTimer;
-        document.onmousemove = resetTimer;
-        document.onkeypress = resetTimer;
-        document.onclick = resetTimer;
-        function logout() {
-          alert("You have been logged out for inactivity, please login again!");
-          const response = await fetch('/logout', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' }
-          });
-          if (response.ok) {
-            document.location.replace('/');
-          } else {response.statusText};
-        }
-        function resetTimer() {
-          clearTimeout(time);
-          // logout after 3 seconds of inactivity -- to TEST
-          time = setTimeout(logout, 3000)
-        }
-      };
-        console.log("testing inactivity");
-        inactivityTime();
-        console.log("logged out");
-  </script>
-  {{/if}}
-</body>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>
+          <a href="/">Express Yourself</a>
+        </h1>
+        <nav>
+          {{#if loggedIn}}
+            <a href="/">
+              <i class="fas fa-home" style="display:inline; align:center;">
+              </i></a>
+            |
+            <a href="/dashboard">Dashboard</a>
+            |
+            <button id="logout" class="btn-no-style">Logout</button>
+          {{else}}
+            <a href="/login">Login / </a>
+            <a href="/sign-up">Sign Up</a>
+          {{/if}}
+        </nav>
+      </header>
+      <main>
+        {{{body}}}
+      </main>
+      <footer>
+        Share Something Meaningful &hearts;
+      </footer>
+    </div>
+
+    {{#if loggedIn}}
+      <script src="/javascript/logout.js"></script>
+      <script src="/javascript/force-logout.js"></script>
+    {{/if}}
+  </body>
 
 </html>
