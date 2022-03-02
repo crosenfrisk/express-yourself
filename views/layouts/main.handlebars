@@ -47,12 +47,12 @@
         document.onclick = resetTimer;
         function logout() {
           alert("You have been logged out for inactivity, please login again!");
-          const response = await fetch('/api/user-routes/logout', {
+          const response = await fetch('/logout', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' }
           });
           if (response.ok) {
-            document.location.replace('/login');
+            document.location.replace('/');
           } else {response.statusText};
         }
         function resetTimer() {
@@ -61,6 +61,7 @@
           time = setTimeout(logout, 3000)
         }
       };
+        console.log("testing inactivity");
         inactivityTime();
         console.log("logged out");
   </script>
