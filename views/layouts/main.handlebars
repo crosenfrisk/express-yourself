@@ -4,12 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Express Yourself</title>
-    <script
-      src="https://kit.fontawesome.com/240270ce6a.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://kit.fontawesome.com/240270ce6a.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/stylesheets/style.css" />
-    {{! <link rel="favicon" href="http://www.w3.org/2000/svg"> }}
+    {{!-- <link rel="icon" href="/assets/images/comments-solid.svg"/> --}}
   </head>
 
   <body>
@@ -22,12 +19,13 @@
           {{#if loggedIn}}
             <a href="/">
               <i class="fas fa-home" style="display:inline; align:center;">
-              </i></a>
+              </i> Home </a>
             |
             <a href="/dashboard">Dashboard</a>
             |
-            <button id="logout" class="btn-no-style">Logout</button>
+            <a href="/" id="logout">Logout</a>
           {{else}}
+            <a href="/dashboard">Dashboard | </a>
             <a href="/login">Login / </a>
             <a href="/sign-up">Sign Up</a>
           {{/if}}
