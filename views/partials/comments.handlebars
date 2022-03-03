@@ -1,12 +1,19 @@
 <div class="comments">
+  
   {{#each this}}
   <section class="comment">
     <div class="meta">
       {{user.username}} on {{format_date created_at}}
     </div>
+
     <div class="text">
-      {{comment_text}}
+      <p> {{comment_text}} </p>
+      <button class="edit-comment-btn" style="text-align:center;display:inline;"><i class="fa-solid fa-delete-left"></i> Edit</button>
+      <button class="delete-comment-btn" style="text-align:center;display:inline;"><i class="fa-solid fa-trash-can"></i> Delete</button>
     </div>
+
+    <br>
+
   </section>
   {{/each}}
 </div>

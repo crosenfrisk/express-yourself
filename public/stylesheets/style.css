@@ -35,9 +35,17 @@
     cursor: pointer;
     border-radius: 5px;
   }
+
+  .delete-comment-btn {
+    background-color: #ff0000a8;
+  }
+
+  .edit-comment-btn {
+    background-color: #0066ffa8;
+  }
   
   button:hover {
-    background-color: #3486eb;
+    background-color: #9bb5cf;
   }
 
   .create-post-btn {
@@ -108,7 +116,7 @@
     padding: 2% 4%;
   }
   
-  .btn-no-style {
+  /* .btn-no-style {
     background: none;
     border: none;
     padding: 0;
@@ -119,19 +127,22 @@
     font-weight: bold;
     transition: color .1s;
     margin-left: 16px;
-  }
+  } */
   
-  .btn-no-style:hover {
+  /* .btn-no-style:hover {
     background: none;
     color: #3486eb;
-  }
+  } */
   
   .delete-post-btn {
     background-color: #d41414;
+    font-size: smaller;
+    position: absolute;
+    float: right;
   }
   
   .delete-post-btn:hover {
-    background-color: #ff643d;
+    background-color: #9bb5cf;
   }
 
   .pub-details {
@@ -162,6 +173,10 @@
   .comment-form button {
     background-color: green;
   }
+
+  .comment-form button :hover {
+    background-color: #9bb5cf;
+  }
   
   .comment {
     padding: 1%;
@@ -169,7 +184,8 @@
   }
   
   .comment:nth-child(odd) {
-    background-color: palegoldenrod;
+    background-color: #e9e8e8;
+    width: auto;
   }
   
   div .meta {
