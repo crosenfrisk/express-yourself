@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Post, User, Comment } = require('../models');
+const withAuth = require('../utils/auth');
 
 // Get all posts for homepage
 router.get('/', (req, res) => {
@@ -46,6 +47,7 @@ router.get('/', (req, res) => {
 
 // Get single post
 router.get('/post/:id', (req, res) => {
+  
   Post.findOne({
     where: {
       id: req.params.id
@@ -78,10 +80,13 @@ router.get('/post/:id', (req, res) => {
       }
 
       const post = dbPostData.get({ plain: true });
+      console.log(req.session.user_id);
+      console.log(post);
 
       res.render('add-comment', {
         post,
-        loggedIn: req.session.loggedIn
+        loggedIn: req.session.loggedIn,
+        sessionUser: req.session.user_id
       });
     })
     .catch(err => {
@@ -112,6 +117,30 @@ router.get('/sign-up', (req, res) => {
 // Direct to new-post page
 router.get('/new-post', (req, res) => {
   res.render('new-post');
+});
+
+// Direct to edit comment page
+router.get('/comment/edit/:id', withAuth, (req, res) => {
+  Comment.findByPk(req.params.id, {
+    attributes: [
+      'comment_text'
+    ],
+  })
+    .then(dbCommentData => {
+      if (dbCommentData) {
+        const comment = dbCommentData.get({ plain: true });
+        
+        res.render('edit-comment', {
+          comment,
+          loggedIn: true
+        });
+      } else {
+        res.status(404).end();
+      }
+    })
+    .catch(err => {
+      res.status(500).json(err);
+    });
 });
 
 module.exports = router;

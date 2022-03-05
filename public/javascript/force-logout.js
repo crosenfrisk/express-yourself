@@ -24,8 +24,8 @@ let inactivityTime = function () {
 
   function resetTimer() {
     clearTimeout(time);
-    // logout after 5 min of inactivity
-    time = setTimeout(forcedLogout, 300000);
+    // logout after 30 min of inactivity
+    time = setTimeout(forcedLogout, 1800000000);
   }
 };
 

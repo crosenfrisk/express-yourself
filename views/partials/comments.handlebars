@@ -1,15 +1,19 @@
 <div class="comments">
 
-  {{#each this}}
+  {{#each comments}}
   <section class="comment">
     <div class="meta">
       {{user.username}} on {{format_date created_at}}
     </div>
 
-    <div class="text">
-      <p> {{comment_text}} </p>
-      <button class="edit-comment-btn" style="text-align:center;display:inline;"><i class="fa-solid fa-delete-left"></i> Edit</button>
-      <button class="delete-comment-btn" style="text-align:center;display:inline;"><i class="fa-solid fa-trash-can"></i> Delete</button>
+    <div class="comment-body">
+      <p class="comment-text">{{comment_text}}</p>
+            
+      {{#if (comment_creator ../sessionUser user_id)}}
+
+      <a href="/comment/edit/{{id}}"><button class="edit-comment-btn" style="text-align:center;display:inline;position: relative; float: left; margin-top: -10px; padding: 3px;"><i class="fa-solid fa-delete-left"></i> Edit</button></a>
+      <button class="delete-comment-btn" style="text-align:center;display:inline;position: relative; float: right; margin-top: -10px; padding: 3px;"><i class="fa-solid fa-trash-can"></i> Delete</button>
+      {{/if}}
     </div>
 
     <br>
@@ -17,3 +21,7 @@
   </section>
   {{/each}}
 </div>
+
+{{!-- REMOVE FROM PARTIAL? 
+<script src="/javascript/edit-comment.js"></script>
+<script src="/javascript/delete-post.js"></script>  --}}

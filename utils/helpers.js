@@ -10,5 +10,13 @@ module.exports = {
     }
 
     return word;
+  },
+  comment_creator: (sessionUser, comment_author_id) => {
+    console.log(sessionUser, comment_author_id);
+    if (sessionUser == comment_author_id) {
+      return true;
+    } else {
+      return false;
+    }
   }
 };

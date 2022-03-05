@@ -1,29 +1,24 @@
 {{!-- This is all from edit-post.handlebars as a placeholder, 
-will mimic to get functionality!
-
-<article>
-  <a href="/dashboard"> &larr; Back to Dashboard</a>
-  <h2>
-    Edit Post
-  </h2>
+will mimic to get functionality! --}}
+{{!-- {{#if loggedIn }} --}}
   <form class="edit-comment-form">
     <div>
-      <label for="post-title">Title</label>
-      <input name="post-title" type="text" value="{{post.title}}"></input>
+      <textarea name="comment-text" value="{{commment.comment-text}}">{{commment.comment-text}}</textarea>
     </div>
-    <div>
-      <label for="post-content">Post Content</label>
-      <textarea name="post_content" value="{{post.post_content}}">{{post.post_content}}</textarea>
-    </div>
-    <div class="pub-details">
-      Created by you on {{format_date post.created_at}}
+  
+    <div class="comment-details">
+      Created by you on {{format_date comment.created_at}}
       |
-      <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
+      <a href="/comment/{{comment.id}}">{{comment.comments.length}} {{format_plural "comment" comment.comments.length}}</a>
     </div>
-    <button type="submit">Save Edited Post</button>
+
+    <button class="save-comment" type="submit">Save Edited Comment</button>
     <button type="button" class="delete-post-btn">Delete Post</button>
   </form>
 </article>
 
 <script src="/javascript/edit-comment.js"></script>
-<script src="/javascript/delete-post.js"></script> --}}
+<script src="/javascript/delete-comment.js"></script> 
+{{!-- {{/if loggedIn}}
+{{else}}
+<p>You are not logged in!</p> --}}
