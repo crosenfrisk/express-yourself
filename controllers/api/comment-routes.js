@@ -50,8 +50,8 @@ router.put('/:id', withAuth, (req, res) => {
 });
 
 router.delete('/:id', withAuth, (req, res) => {
-  Comment.destroy(
-  {
+  if (req.session) {
+  Comment.destroy({
     where: {
       id: req.params.id
     }
@@ -67,6 +67,7 @@ router.delete('/:id', withAuth, (req, res) => {
       console.log(err);
       res.status(500).json(err);
     });
+  }
 });
 
 module.exports = router;
