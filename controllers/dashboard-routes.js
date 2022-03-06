@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 const { Post, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
-// get all posts for dashboard
+// Get all Posts to display on dashboard view
 router.get('/', withAuth, (req, res) => {
   console.log(req.session);
   console.log('======================');
@@ -42,6 +42,7 @@ router.get('/', withAuth, (req, res) => {
     });
 });
 
+// Route enables user to edit ONE specific post by its id (if they are the creator of the post from the dashboard page).
 router.get('/edit/:id', withAuth, (req, res) => {
   Post.findByPk(req.params.id, {
     attributes: [
@@ -82,8 +83,6 @@ router.get('/edit/:id', withAuth, (req, res) => {
     });
 });
 
-// router.get('/new-post', withAuth, (req, res) => {
-//   res.render('/new-post', { message : 'Create New Post' });
-//   });
+// Route for creating "new post" lives in home-routes.js -- directs user view to "new post" page from Dashboard view.
 
 module.exports = router;

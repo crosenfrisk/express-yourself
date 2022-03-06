@@ -114,7 +114,7 @@ router.get('/sign-up', (req, res) => {
   res.render('sign-up');
 });
 
-// Direct to new-post page
+// // Direct to new-post page
 router.get('/new-post', (req, res) => {
   res.render('new-post');
 });
