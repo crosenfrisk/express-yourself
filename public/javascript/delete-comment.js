@@ -1,19 +1,14 @@
 async function deleteCommentHandler(event, id) {
-    console.log("delete comment");
-    event.preventDefault();
-
-    console.log(event.target);
+    event.preventDefault();    
     
-    // const id = window.location.toString().split('/')[
-    //   window.location.toString().split('/').length - 1
-    // ];
+    const commentid = event.target.dataset.commentid;
 
-    const response = await fetch(`/api/comments/${id}`, {
+    const response = await fetch(`/api/comments/${commentid}`, {
       method: 'DELETE'
     });
   
     if (response.ok) {
-      document.location.replace('/dashboard/');
+      document.location.replace('/');
     } else {
       alert(response.statusText);
     }

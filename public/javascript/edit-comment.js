@@ -1,12 +1,11 @@
 async function editCommentHandler(event) {
-  // console.log("edit-comment");
+
     event.preventDefault();
   
     const comment_text = document.querySelector('textarea[name="comment-text"]').value.trim();
     const id = window.location.toString().split('/')[
       window.location.toString().split('/').length - 1
     ];
-    // console.log(id);
     
     const response = await fetch(`/api/comments/${id}`, {
       method: 'PUT',
