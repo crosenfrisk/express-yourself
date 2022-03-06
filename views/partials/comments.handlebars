@@ -11,6 +11,7 @@
             
       {{#if (comment_creator ../sessionUser user_id)}}
 
+{{!-- onclick="{{comment_deleter event id}}" --}}
       <a href="/comment/edit/{{id}}"><button class="edit-comment-btn" style="text-align:center;display:inline;position: relative; float: left; margin-top: -10px; padding: 3px;"><i class="fa-solid fa-delete-left"></i> Edit</button></a>
       <button class="delete-comment-btn" style="text-align:center;display:inline;position: relative; float: right; margin-top: -10px; padding: 3px;"><i class="fa-solid fa-trash-can"></i> Delete</button>
       {{/if}}
@@ -22,6 +23,4 @@
   {{/each}}
 </div>
 
-{{!-- REMOVE FROM PARTIAL? 
-<script src="/javascript/edit-comment.js"></script>
-<script src="/javascript/delete-post.js"></script>  --}}
+<script src="/javascript/delete-comment.js"></script> 

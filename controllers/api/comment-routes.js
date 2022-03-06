@@ -50,7 +50,8 @@ router.put('/:id', withAuth, (req, res) => {
 });
 
 router.delete('/:id', withAuth, (req, res) => {
-  Comment.destroy({
+  Comment.destroy(
+  {
     where: {
       id: req.params.id
     }

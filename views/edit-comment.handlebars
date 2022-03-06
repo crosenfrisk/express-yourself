@@ -4,17 +4,11 @@ will mimic to get functionality! --}}
     <div>
       <textarea name="comment-text" value="{{commment.comment-text}}">{{commment.comment-text}}</textarea>
     </div>
-  
-    <div class="comment-details">
-      Created by you on {{format_date comment.created_at}}
-      |
-      <a href="/comment/{{comment.id}}">{{comment.comments.length}} {{format_plural "comment" comment.comments.length}}</a>
-    </div>
 
     <button class="save-comment" type="submit">Save Edited Comment</button>
-    <button type="button" class="delete-post-btn">Delete Post</button>
+    {{!-- <button type="button" class="delete-comment-btn">Delete Comment</button> --}}
   </form>
 </article>
 
 <script src="/javascript/edit-comment.js"></script>
-<script src="/javascript/delete-comment.js"></script> 
+{{!-- <script src="/javascript/delete-comment.js"></script>  --}}
