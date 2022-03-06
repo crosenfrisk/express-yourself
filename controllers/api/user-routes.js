@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { User, Post, Comment } = require('../../models');
 
-// get all users
+// Return all users
 router.get('/', (req, res) => {
   User.findAll({
     attributes: { exclude: ['password'] }
@@ -13,6 +13,7 @@ router.get('/', (req, res) => {
     });
 });
 
+// Find ONE user by id
 router.get('/:id', (req, res) => {
   User.findOne({
     attributes: { exclude: ['password'] },
@@ -47,6 +48,7 @@ router.get('/:id', (req, res) => {
     });
 });
 
+// Create a new user, requires user to input username and password
 router.post('/', (req, res) => {
   // expects {username: 'Lernantino', password: 'password1234'}
   User.create({
@@ -68,6 +70,7 @@ router.post('/', (req, res) => {
     });
 });
 
+// Route for "logging into site" requires username and password to authenticate.
 router.post('/login', (req, res) => {
   // expects {password: 'lernantino', password: 'password1234'}
   User.findOne({
@@ -86,7 +89,7 @@ router.post('/login', (req, res) => {
       res.status(400).json({ message: 'Incorrect password!' });
       return;
     }
-
+    // Validates user has the correct permissions to login.
     req.session.save(() => {
       req.session.user_id = dbUserData.id;
       req.session.username = dbUserData.username;
@@ -97,6 +100,8 @@ router.post('/login', (req, res) => {
   });
 });
 
+// Destroys user session, returns user to the homepage with logged-out view. 
+// Users cannot write, edit, or delete posts or comments without logging back in!
 router.post('/logout', (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
@@ -108,9 +113,10 @@ router.post('/logout', (req, res) => {
   }
 });
 
+// User can update ID -- -- not yet implemented in CMS but option is available should a future iteration
+// like to see this feature enabled.
 router.put('/:id', (req, res) => {
   // expects {username: 'Lernantino', password: 'password1234'}
-
   // pass in req.body instead to only update what's passed through
   User.update(req.body, {
     individualHooks: true,
@@ -131,6 +137,8 @@ router.put('/:id', (req, res) => {
     });
 });
 
+// User can delete ID -- not yet implemented in CMS but option is available should a future iteration
+// like to see this feature enabled.
 router.delete('/:id', (req, res) => {
   User.destroy({
     where: {
