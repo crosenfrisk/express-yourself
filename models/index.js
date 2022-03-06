@@ -1,9 +1,9 @@
-// import all models
+// Import all models
 const Post = require('./Post');
 const User = require('./User');
 const Comment = require('./Comment');
 
-// create associations
+// Create relationships
 User.hasMany(Post, {
   foreignKey: 'user_id'
 });
@@ -32,4 +32,6 @@ Post.hasMany(Comment, {
   foreignKey: 'post_id'
 });
 
+
+// Export relationships for User, Post, and Comment
 module.exports = { User, Post, Comment };
