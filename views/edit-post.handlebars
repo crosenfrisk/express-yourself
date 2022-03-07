@@ -1,3 +1,5 @@
+{{!-- Edit Post form --}}
+
 <article>
   <a href="/dashboard"> &larr; Back to Dashboard</a>
   <h2>
@@ -17,6 +19,7 @@
       |
       <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
     </div>
+    {{!-- Options to save edited post OR delete post --}}
     <button type="submit">Save Edited Post</button>
     <button type="button" class="delete-post-btn">Delete Post</button>
   </form>
