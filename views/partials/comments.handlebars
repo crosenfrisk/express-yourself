@@ -10,7 +10,7 @@
       <p class="comment-text">{{comment_text}}</p>
             
       {{#if (comment_creator ../sessionUser user_id)}}
-
+      {{!-- Buttons for Editing and Deleting Comments  --}}
       <a href="/comment/edit/{{id}}"><button class="edit-comment-btn" style="text-align:center;display:inline;position: relative; float: left; margin-top: -10px; padding: 3px;"><i class="fa-solid fa-delete-left"></i> Edit</button></a>
       <button class="delete-comment-btn" style="text-align:center;display:inline;position: relative; float: right; margin-top: -10px; padding: 3px;" data-commentId="{{id}}" ><i class="fa-solid fa-trash-can"></i> Delete</button>
       {{/if}}
