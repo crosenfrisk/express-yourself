@@ -1,5 +1,7 @@
+// Import Post model
 const { Post } = require('../models');
 
+// post data seeds using Lorem Ipsum
 const postdata = [
   {
     title: 'Donec posuere metus vitae ipsum.',
@@ -104,6 +106,8 @@ const postdata = [
   }
 ];
 
+// Function to create post data
 const seedPosts = () => Post.bulkCreate(postdata);
 
+// export seedPosts
 module.exports = seedPosts;
