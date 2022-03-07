@@ -1,4 +1,4 @@
-// const deleteCommentHandler = require('../public/javascript/delete-comment');
+// helpers to format_date, format_plural, and identify "comment_creator" as needed 
 
 module.exports = {
   format_date: date => {
@@ -21,9 +21,4 @@ module.exports = {
       return false;
     }
   }
-  // ,
-  // comment_deleter: (e, id) => {
-  //   deleteCommentHandler(e, id);
-  // }
-
 };
