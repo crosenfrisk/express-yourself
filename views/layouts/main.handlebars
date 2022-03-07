@@ -1,9 +1,12 @@
+{{!-- MAIN HTML TEMPLATE --}}
+
 <html lang="en">
 
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Express Yourself</title>
+    {{!-- IMPORTED FONT AWESOME FOR USE OF ICONS --}}
     <script src="https://kit.fontawesome.com/240270ce6a.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/stylesheets/style.css" />
 
@@ -13,6 +16,7 @@
     <div class="wrapper">
       <header>
         <h1>
+          {{!-- "/" link to return home as additional option to home link --}}
           <a href="/">Express Yourself</a>
         </h1>
         <nav>
@@ -21,10 +25,13 @@
               <i class="fas fa-home" style="display:inline; align:center;">
               </i> Home </a>
             |
+            {{!-- redirects to Dashboard while logged in --}}
             <a href="/dashboard">Dashboard</a>
             |
+            {{!-- redirects to Homepage on logout  --}}
             <a href="/" id="logout">Logout</a>
           {{else}}
+          {{!-- If NOT loggedIn, user will see these links  --}}
             <a href="/dashboard">Dashboard | </a>
             <a href="/login">Login / </a>
             <a href="/sign-up">Sign Up</a>
