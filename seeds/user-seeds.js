@@ -15,19 +15,11 @@ const userdata = [
   {
     username: 'ToddSbiz',
     password: 'password123'
-  },
-  {
-    username: 'toodles',
-    password: 'password123'
-  },
-  {
-    username: 'modSquad',
-    password: 'password123'
   }
 ];
 
 // function to seed userdata, requiring hooks.
-const seedUsers = () => User.bulkCreate(userdata);
+const seedUsers = () => User.bulkCreate(userdata, {individualHooks: true});
 
 // export seedUsers
 module.exports = seedUsers;

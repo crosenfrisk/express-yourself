@@ -1,26 +1,32 @@
 // Import all seed files
-const seedUsers = require('./user-seeds');
-const seedPosts = require('./post-seeds');
-const seedComments = require('./comment-seeds');
+const seedUsers = require("./user-seeds");
+const seedPosts = require("./post-seeds");
+const seedComments = require("./comment-seeds");
 
 // Import sequelize
-const sequelize = require('../config/connection');
+const sequelize = require("../config/connection");
 
 // function to run all seeds and populate the database
 const seedAll = async () => {
-  await sequelize.sync({ force: true });
-  console.log('--------------');
-  
-  await seedUsers();
-  console.log('--------------');
+  try {
+    await sequelize.sync({ force: true });
+    console.log("--------------");
 
-  await seedPosts();
-  console.log('--------------');
+    await seedUsers();
+    console.log("--------------");
 
-  await seedComments();
-  console.log('--------------');
+    await seedPosts();
+    console.log("--------------");
 
-  process.exit(0);
+    await seedComments();
+    console.log("--------------");
+
+    process.exit(0);
+  } catch (error) {
+    console.log(error.message);
+
+    throw new Error(error.message);
+  }
 };
 
 // calling function, so when we run index.js, seeds are populated.
