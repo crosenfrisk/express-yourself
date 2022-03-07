@@ -17,18 +17,6 @@ const userdata = [
     password: 'password123'
   },
   {
-    username: 'lsstammer',
-    password: 'password123'
-  },
-  {
-    username: '889fg',
-    password: 'password123'
-  },
-  {
-    username: 'msfig',
-    password: 'password123'
-  },
-  {
     username: 'toodles',
     password: 'password123'
   },
@@ -39,7 +27,7 @@ const userdata = [
 ];
 
 // function to seed userdata, requiring hooks.
-const seedUsers = () => User.bulkCreate(userdata, {individualHooks: true});
+const seedUsers = () => User.bulkCreate(userdata);
 
 // export seedUsers
 module.exports = seedUsers;
