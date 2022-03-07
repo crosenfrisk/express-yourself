@@ -46,6 +46,6 @@ const sess = {
   app.use(require('./controllers/'));
   
   // synce database using sequelize (rather than running MySQL every time)
-  sequelize.sync({ force: true }).then(() => {
+  sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => console.log('Now listening'));
   });
