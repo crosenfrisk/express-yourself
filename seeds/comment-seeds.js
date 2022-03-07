@@ -1,5 +1,7 @@
+// Import Comment model
 const { Comment } = require('../models');
 
+// comment-seeds using Lorem Ipsum
 const commentdata = [
   {
     comment_text: 'Nunc rhoncus dui vel sem.',
@@ -264,6 +266,8 @@ const commentdata = [
   }
 ];
 
+// function to seed Comments and create dummy comment data
 const seedComments = () => Comment.bulkCreate(commentdata);
 
+// exporting seedComments
 module.exports = seedComments;
