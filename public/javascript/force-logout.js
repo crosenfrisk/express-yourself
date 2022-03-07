@@ -1,5 +1,8 @@
 // Time out function for ALL pages; users must be active while logged in to continue to
 // make posts, comment, and edit posts/comments, delete posts/comments.
+
+// Function comes from www.w3docs.com (see README for details)
+
 let inactivityTime = function () {
   let time;
 
@@ -15,6 +18,7 @@ let inactivityTime = function () {
       headers: { "Content-Type": "application/json" },
     });
 
+    // Logged out will automatically redirect user to homepage.
     if (response.ok) {
       document.location.replace("/");
     } else {
